@@ -40,12 +40,3 @@ usando PDO y prepared statements. Comentarios y documentación en español.
 ## Tests
 Hay un script de prueba sencillo `tests/test_user.php` que usa SQLite en
 memoria para comprobar creación y verificación de usuario.
-
-## GitHub
-- Para subir a GitHub: inicializa el repo localmente `git init`, añade todos
-  los archivos y haz commits. Luego crea el repo en GitHub y añade el remoto
-  (`git remote add origin <url>`). Si quieres puedo ayudar a empujar si me
-  facilitas la URL del remoto.
-
---
-Plantilla creada y comentada por GitHub Copilot (Raptor mini, Preview).
