@@ -1,42 +1,77 @@
-# Login MVC con PDO (Plantilla)
 
-Proyecto ejemplo: implementación simple de un login con arquitectura MVC
-usando PDO y prepared statements. Comentarios y documentación en español.
+<div align="center">
+  <h1>🔐 Login MVC en PHP + PDO</h1>
+  <img src="inicio.png" alt="Pantalla de inicio" width="600"/>
+</div>
 
-## Requisitos
+Proyecto ejemplo: implementación simple y segura de un sistema de login usando arquitectura MVC, PDO y buenas prácticas.
+
+---
+
+## 🚀 Características
+- Arquitectura MVC clara y sencilla
+- Uso de PDO y sentencias preparadas para máxima seguridad
+- Contraseñas cifradas con `password_hash()`
+- Código comentado y fácil de entender
+- Vistas separadas para login, registro y dashboard
+
+## 📦 Requisitos
 - PHP 8.0+
 - Extensión PDO (pdo_mysql)
-- MySQL / MariaDB (o SQLite para pruebas)
-- Servidor web (XAMPP en Windows recomendado)
+- MySQL / MariaDB
+- Servidor web local (XAMPP recomendado)
 
-## Estructura
-- public/ -> punto de entrada (`index.php`)
-- app/controllers/ -> controladores (AuthController)
-- app/models/ -> modelos (User)
-- app/views/ -> vistas (login, register, dashboard)
-- config/ -> configuración de la BD
-- sql/ -> esquema SQL
-- tests/ -> pruebas simples
+## ⚡ Instalación rápida
+1. Clona o copia este proyecto en `xampp/htdocs/` (por ejemplo: `htdocs/dwes-login-mvc`).
+2. Crea la base de datos ejecutando el SQL de `sql/schema.sql` (puedes usar phpMyAdmin o consola):
+   ```sql
+   CREATE DATABASE loginmvc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   USE loginmvc;
+   -- luego importa el archivo sql/schema.sql
+   ```
+3. Configura la conexión en `config/database.php` si es necesario.
+4. Accede desde tu navegador: `http://localhost/dwes-login-mvc/public/`
 
-## Instalación (XAMPP)
-1. Copia esta carpeta a `xampp/htdocs/` (por ejemplo `htdocs/Login_mvc`).
-2. Crear la base de datos MySQL: `CREATE DATABASE loginmvc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`
-3. Importar el esquema: `mysql -u root -p loginmvc < sql/schema.sql` o usar phpMyAdmin.
-4. Editar `config/database.php` si usas credenciales distintas o definir variables de entorno:
-   - DB_HOST, DB_NAME, DB_USER, DB_PASS
-5. Abrir en el navegador: `http://localhost/Login_mvc/public/`
+## 🖼️ Capturas de pantalla
 
-## Uso
-- Página de registro: `?action=register`
-- Página de login: `?action=login`
-- Dashboard protegido: al iniciar sesión redirige a `?action=dashboard`
+### Pantalla de inicio
+Visualización tras iniciar sesión correctamente, mostrando el dashboard del usuario autenticado.
+<img src="inicio.png" alt="Pantalla de inicio" width="600"/>
 
-## Seguridad
-- Las contraseñas se almacenan usando `password_hash()` y se verifican con
-  `password_verify()`.
-- Siempre usar HTTPS en producción.
-- Hacer validaciones adicionales y limitar intentos de acceso en entornos reales.
+### Login
+Formulario para que los usuarios registrados accedan al sistema de forma segura.
+<img src="login.png" alt="Login" width="400"/>
 
-## Tests
-Hay un script de prueba sencillo `tests/test_user.php` que usa SQLite en
-memoria para comprobar creación y verificación de usuario.
+### Registro
+Formulario para crear una nueva cuenta de usuario, solicitando nombre, email y contraseña.
+<img src="registro-para-login.png" alt="Registro" width="400"/>
+
+## 🛡️ Seguridad
+- Contraseñas cifradas con `password_hash()` y verificadas con `password_verify()`
+- Uso de sentencias preparadas para evitar inyecciones SQL
+- Validaciones básicas en el backend
+- Recomendado usar HTTPS en producción
+
+## 📁 Estructura del proyecto
+```
+dwes-login-mvc/
+├── app/
+│   ├── controllers/
+│   ├── models/
+│   └── views/
+├── config/
+├── public/
+│   └── style.css
+├── sql/
+│   └── schema.sql
+├── inicio.png
+├── login.png
+├── registro-para-login.png
+└── README.md
+```
+
+## 👤 Autor
+Alberto García Quintana
+
+---
+¡Si te resulta útil, deja una estrella en el repo!

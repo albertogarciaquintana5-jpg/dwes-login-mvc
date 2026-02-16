@@ -8,6 +8,3 @@ CREATE TABLE IF NOT EXISTS `users` (
   `rol` VARCHAR(20) DEFAULT 'user',
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- Usuario de ejemplo (contraseña: demo123)
--- INSERT INTO users (email, password_hash, nombre) VALUES ('admin@example.com', '$2y$10$examplehash', 'Admin');
